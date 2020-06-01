@@ -1,43 +1,65 @@
-#include <string> 
-
 #include <iostream> 
 
-
-
 #include "Time.h" 
-
-
+ 
 
 using namespace std;
+ 
 
+Time* Time::singleton_ = nullptr; 
 
+ 
 
-int main()
+int main() 
 
-{
+{ 
 
-    system("chcp 1251");
+    system("chcp 1251"); 
 
-    system("cls");
+    system("cls"); 
 
+ 
 
+    Time* real = Time::GetInstance(); 
 
-    Context* context = new Context(new WalkingTour);
+    int h, m, s; 
 
-    cout << "ѕершa стратег≥€" << endl;
+        //введенн€ даних 
 
-    context->DoSomeBusinessLogic(50);
+        cout << "¬вед≥ть години" << endl; 
 
-    context->set_strategy(new MixedExcursion);
+        cin >> h; 
 
-    cout << "ƒруга стратег≥€" << endl;
+        cout << "¬вед≥ть хвилини" << endl; 
 
-    context->DoSomeBusinessLogic(50);
+        cin >> m; 
 
+        cout << "¬вед≥ть секунди" << endl; 
 
+        cin >> s; 
 
-    system("pause");
+ 
 
-    return 0;
+        real->set(h, m, s); 
 
-}
+      
+
+        //виведенн€ введеного часу 
+
+        real->get(); 
+
+ 
+
+        Time* gg = Time::GetInstance(); 
+
+        gg->get1(); 
+
+         
+
+     
+
+    system("pause"); 
+
+    return 0; 
+
+} 
